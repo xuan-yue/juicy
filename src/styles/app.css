@@ -28,6 +28,14 @@ h1 {
   font-size: 35px;
 }
 
+.wink-heart-path-thing {
+  transform: translate(-40px, -10px);
+}
+
+#shadow {
+  transform: translateX(-30px);
+}
+
 #plant {
   transform: rotate(3deg);
   transform-origin: center;
