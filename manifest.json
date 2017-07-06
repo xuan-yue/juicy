@@ -11,5 +11,5 @@
   "chrome_url_overrides": {
     "newtab": "src/index.html"
   },
-  "manifest_version": 1
+  "manifest_version": 2
 }

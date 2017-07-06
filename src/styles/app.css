@@ -1,0 +1,53 @@
+body, html {
+  font-size: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8fafb;
+}
+
+/* Reset */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Patua One', cursive;
+  font-size: 35px;
+}
+
+#plant {
+  transform: rotate(3deg);
+  transform-origin: center;
+  transition: transform 0.2s;
+}
+
+#left-eye, #left-cheek {
+  transform: translateY(-1px);
+  transition: transform 0.2s;
+}
+
+#left-cheek {
+  transform: translateY(4px);
+}
+
+#plant.rotate {
+  transform: rotate(0);
+}
+
+#left-eye.wink, #left-cheek.wink {
+  transform: translateY(0);
+}
+
