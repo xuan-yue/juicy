@@ -29,19 +29,31 @@ var sayings = [
 	"A little more sunshine please, mommy."
 	]
 
+heart.classList.add("fade");
+heartSm.classList.add("fade");
 
 $('.button-wink').addEventListener('click', () => {
   wink();
   setTimeout(wink, 300);
+  //Make first heart visible
+  heart.classList.remove("fade");
+  //Set animation path for both hearts
   var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
   var positionTiming = {duration: 3000, iterations: 1};
+  //Launch first heart
   heart.animate(positionKeyframes, positionTiming);
+  //Launch second heart after 1st
+  setTimeout(function(){
+  	heartSm.classList.remove("fade");
+  	heartSm.animate(positionKeyframes, positionTiming);
+  	}, 1000);
+  //Fade first heart
   setTimeout(function(){
        heart.classList.add("fade");
-   }, 1000);
+   }, 1300);
   setTimeout(function(){
-       heart.classList.remove("fade");
-   }, 3000);
+  	heartSm.classList.add("fade");
+  }, 2000);
 });
 
 $('.button-quote').addEventListener('click', () => {
@@ -49,7 +61,6 @@ $('.button-quote').addEventListener('click', () => {
 	document.getElementById('quote').innerHTML = sayings[rand];
 });
 
-// $('#heart').fadeTo("slow", 0);
 
 function wink() {
   plant.classList.toggle('rotate');
@@ -58,7 +69,7 @@ function wink() {
 }
 
 
-function heartFade(){
-	// $('#heart').fadeTo("slow", 0);
-	heart.classList.toggle('fade');
-}
+// function heartFade(){
+// 	// $('#heart').fadeTo("slow", 0);
+// 	heart.classList.toggle('fade');
+// }
