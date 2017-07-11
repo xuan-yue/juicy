@@ -30,14 +30,12 @@ var sayings = [
 	]
 
 
-	var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
-	var positionTiming = {duration: 5000, iterations: Infinity};
-	heart.animate(positionKeyframes, positionTiming);
-
 $('.button-wink').addEventListener('click', () => {
   wink();
-  // heart();
   setTimeout(wink, 300);
+  var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
+  var positionTiming = {duration: 5000, iterations: Infinity};
+  heart.animate(positionKeyframes, positionTiming);
 });
 
 $('.button-quote').addEventListener('click', () => {
@@ -45,15 +43,21 @@ $('.button-quote').addEventListener('click', () => {
 	document.getElementById('quote').innerHTML = sayings[rand];
 });
 
+// $('#heart').fadeTo("slow", 0);
+
 function wink() {
   plant.classList.toggle('rotate');
   leftEye.classList.toggle('wink');
   leftCheek.classList.toggle('wink');
+  // heart.classList.add('fade');
+  // setTimeout(function(){
+  //      $("#heart").addClass("pop");
+  //  }, 2000);
+  // heart.classList.add('pop');
 }
 
 
-// function heart(){
-// 	var positionKeyframes = [ {motionOffset: "100%"}, {motionOffset: "0%"} ];
-// 	var positionTiming = {duration: 5000, iterations: Infinity};
-// heart.animate(positionKeyframes, positionTiming);
-// }
+function heartFade(){
+	// $('#heart').fadeTo("slow", 0);
+	heart.classList.toggle('fade');
+}

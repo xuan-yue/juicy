@@ -89,17 +89,24 @@ h1 {
 
 #heart{
   offset-path: path("M75.1171875,146.880859 C66.4830729,139.798828 58.4641927,136.17513 51.0605469,136.009766 C39.9550781,135.761719 30.5800781,143.376953 22.4902344,143.376953 C14.4003906,143.376953 5.0078125,139.370015 1,132");
-  transform: translate(38.058594, 139.440430) rotate(10.000000) translate(-38.058594, -139.440430);
   transform-origin: center;
-  /*transform: translate(0px,0px);
-  /*animation: path-animation 1s;*/
 }
 
-/*@keyframes path-animation {
-  0% { 
-    motion-offset: 0;
-  }
-  100% { 
-    motion-offset: '100%';
-  }
-}*/
+#heart.fade {
+  /* opacity: 0;
+   transition: opacity .5s ease;
+   -moz-transition: opacity .5s ease;
+   -webkit-transition: opacity .5s ease;*/
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0s 1s, opacity 2s linear;
+   }
+#heart.pop {
+  /* opacity: 0;
+   transition: opacity .5s ease;
+   -moz-transition: opacity .5s ease;
+   -webkit-transition: opacity .5s ease;*/
+   visibility: visible;
+   opacity: 1;
+   transition: visibility 0s 1s, opacity 2s linear;
+   }
