@@ -25,12 +25,18 @@ var sayings = [
 	"If you don't water me, it's ok. I'll still love you.",
 	"Do my leaves look fat?",
 	"I'll make you a flower one of these days, just to see you smile.",
-	"My name is Dog Tongue. Will the other succulents make fun of me?",
+	"Scientists named me dog tongue after the shape of my leaves.",
 	"A little more sunshine please, mommy."
 	]
 
+
+	var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
+	var positionTiming = {duration: 5000, iterations: Infinity};
+	heart.animate(positionKeyframes, positionTiming);
+
 $('.button-wink').addEventListener('click', () => {
   wink();
+  // heart();
   setTimeout(wink, 300);
 });
 
@@ -44,3 +50,10 @@ function wink() {
   leftEye.classList.toggle('wink');
   leftCheek.classList.toggle('wink');
 }
+
+
+// function heart(){
+// 	var positionKeyframes = [ {motionOffset: "100%"}, {motionOffset: "0%"} ];
+// 	var positionTiming = {duration: 5000, iterations: Infinity};
+// heart.animate(positionKeyframes, positionTiming);
+// }
