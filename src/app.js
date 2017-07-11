@@ -34,8 +34,14 @@ $('.button-wink').addEventListener('click', () => {
   wink();
   setTimeout(wink, 300);
   var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
-  var positionTiming = {duration: 5000, iterations: Infinity};
+  var positionTiming = {duration: 3000, iterations: 1};
   heart.animate(positionKeyframes, positionTiming);
+  setTimeout(function(){
+       heart.classList.add("fade");
+   }, 1000);
+  setTimeout(function(){
+       heart.classList.remove("fade");
+   }, 3000);
 });
 
 $('.button-quote').addEventListener('click', () => {
@@ -49,11 +55,6 @@ function wink() {
   plant.classList.toggle('rotate');
   leftEye.classList.toggle('wink');
   leftCheek.classList.toggle('wink');
-  // heart.classList.add('fade');
-  // setTimeout(function(){
-  //      $("#heart").addClass("pop");
-  //  }, 2000);
-  // heart.classList.add('pop');
 }
 
 
