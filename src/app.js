@@ -7,7 +7,7 @@ function $(selector) {
 const plant = $('#plant');
 const leftEye = $('#left-eye');
 const leftCheek = $('#left-cheek');
-var sayings = [	
+const sayings = [	
 	"Remember to hydrate, my friend",
 	"Is it hot in here or is it just me?",
 	"We both thrive in adverse condition",
@@ -27,10 +27,13 @@ var sayings = [
 	"I'll make you a flower one of these days, just to see you smile.",
 	"Scientists named me dog tongue after the shape of my leaves.",
 	"A little more sunshine please, mommy."
-	]
+];
 
 heart.classList.add("fade");
 heartSm.classList.add("fade");
+
+const rand = Math.floor(Math.random() * sayings.length);
+document.getElementById('quote').innerHTML = sayings[rand];
 
 $('.button-wink').addEventListener('click', () => {
   wink();
@@ -38,8 +41,8 @@ $('.button-wink').addEventListener('click', () => {
   //Make first heart visible
   heart.classList.remove("fade");
   //Set animation path for both hearts
-  var positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
-  var positionTiming = {duration: 3000, iterations: 1};
+  const positionKeyframes = [ {motionOffset: "0%"}, {motionOffset: "100%"} ];
+  const positionTiming = {duration: 3000, iterations: 1};
   //Launch first heart
   heart.animate(positionKeyframes, positionTiming);
   //Launch second heart after 1st
@@ -55,12 +58,6 @@ $('.button-wink').addEventListener('click', () => {
   	heartSm.classList.add("fade");
   }, 2000);
 });
-
-$('.button-quote').addEventListener('click', () => {
-	var rand = Math.floor(Math.random()*sayings.length);
-	document.getElementById('quote').innerHTML = sayings[rand];
-});
-
 
 function wink() {
   plant.classList.toggle('rotate');
